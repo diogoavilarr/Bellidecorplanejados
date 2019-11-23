@@ -200,6 +200,7 @@ border-radius: 15px;
     margin-right: 10px;
     font-size: 20px;
     cursor: pointer;
+    color: #fff;
     transition: 450ms all;
     -webkit-transform-origin: center left;
             transform-origin: center left;
@@ -226,7 +227,7 @@ border-radius: 15px;
   }
   .tile__details:after,
   .tile__details:before {
-    content: '';
+ 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -244,17 +245,7 @@ border-radius: 15px;
     
     z-index: 1;
   }
-  .tile__details:before {
-    content: '▶';
-    left: 0;
-    width: 100%;
-    font-size: 30px;
-    margin-left: 5px;
-    margin-top: -16px;
-    text-align: center;
-    color: #fff;
-    
-  }
+
   .tile:hover .tile__details {
     opacity: 1;
   }
