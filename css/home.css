@@ -45,7 +45,7 @@ transform: translateY(-50%);
 body{
     margin: 0 auto;
     background: #0d0d0d;
-    height: 1300px;
+    height: 1100px;
 }
 html{
     height: 1000px;
@@ -200,7 +200,8 @@ border-radius: 15px;
     margin-right: 10px;
     font-size: 20px;
     cursor: pointer;
-    color: #fff;
+    color: #ffff;
+    font-family: 'Montserrat', sans-serif;
     transition: 450ms all;
     -webkit-transform-origin: center left;
             transform-origin: center left;

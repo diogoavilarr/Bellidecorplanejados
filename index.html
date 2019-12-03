@@ -1,121 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <title>Menu</title>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+  </head>
+  <body>
+      <img src="img/logo2.png" alt="" width="100px" class="logo">
+    <h1 id="bigOne"></h1>
+      <div class="container">
+        <p>
+          <input id="txtemail" type="email" placeholder="Email" type="checkbox">
+         <input id="txtpassword" type="password" placeholder="Senha" type="checkbox">  </p>
+            
+          <p>
+            <button id="btnLogin" class="btn btn-action" type="submit">Logar</button>
+          <button id="btnSignUp" class="btn btn-secondary" type="submit">Criar Usuário</button>
+          <button id="btnLogout" class="btn btn-action hide" type="submit">Sair</button>
+        </p>
+      </div>
+      <div class="imagem">
+          <img src="img/retangulo.png" alt="">
+        </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+  <script>
+    var logado="false";
+    var naologado;
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyDVt_JnBlDkHSgXddou90hq3-bMaC0Xuvk",
+    authDomain: "garage-tapes.firebaseapp.com",
+    databaseURL: "https://garage-tapes.firebaseio.com",
+    projectId: "garage-tapes",
+    storageBucket: "garage-tapes.appspot.com",
+    messagingSenderId: "971387374668",
+    appId: "1:971387374668:web:fb9aa916d4ee23725b38e9",
+    measurementId: "G-LWL52L3FWQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  
+    //Get elements
+    const txtemail = document.getElementById('txtemail');
+    const txtpassword = document.getElementById('txtpassword');
+    const btnLogin = document.getElementById('btnLogin');
+    const btnSignUp = document.getElementById('btnSignUp');
+    const btnLogout = document.getElementById('btnLogout');
     
-</head>
-<header>
-    <a href="play.html"><img id="circulo" src="img/play2.png" alt=""></a>
-   <header class="menu">
+    //add login event
+    btnLogin.addEventListener('click', e =>{
+      const email = txtemail.value;
+      const pass = txtpassword.value;
+      const auth = firebase.auth();
+      //sign in 
+      const promise = 
+      auth.signInWithEmailAndPassword(email,pass);
+      promise.catch(e => console.log(e.message));
 
-    <div>
-        <a href="home.html">
-        <img src="img/home.png" alt="">
-        </a>
-    </div>
+    });
 
-    <div>
-        <a href="eventos.html"><img src="img/event (1).png" alt=""></a>
-    </div>
-
-    <div >
-        
-    </div>
-
-    <div>
-        <img src="img/cassette.png" alt="">
-    </div>
-
-    <div>
-        <img src="img/home.png" alt="">
-    </div>
-
-</header>
+    btnLogout.addEventListener('click', e =>{
+      firebase.auth().signOut(); 
+    });
     
+    //add signup event
+    btnSignUp.addEventListener('click', e =>{
+          const email = txtemail.value;
+          const pass = txtpassword.value;
+          const auth = firebase.auth();
+          //sign in 
+          const promise = 
+          auth.createUserWithEmailAndPassword(email,pass);
+          promise
+          .catch(e => console.log(e.message));
+
+      
+    });
+    btnLogout.addEventListener('click', e => {
+        firebase.auth().signOut();
+    });
     
 
-</header>
-<body>
-       
-    <img src="img/banner.png" alt="" class="banner">
-     <img src="img/logo.png" alt="" class="logo">
-        <a href="login.html"><h2>Sair</h2></a>
-    <div class="retangulo">
-
-        <img src="img/Assistir.png" alt="" width="105px" class="assistir">
-    </div>
-    <div class="linha">
-    <h3>Punk Rock<br>
-        Avante</h3>
-    <img src="img/05_00_00 doc.png" alt="" class="min">
-    </div>
-
-    </div>
-    
-    <!--
-    <section class="bloco1"></section>
-    <section class="bloco2"></section>
-    <section class="bloco3"></section>
-    <section class="bloco4"></section>
-    -->
-
-    <div class="container-video">
-        
-    <img src="img/referencia.jpg">
-    <img src="img/referencia.jpg">
-    <img src="img/referencia.jpg">
-    <img src="img/referencia.jpg">
-
-    </div>
-    <div class="row">
-            <div class="row__inner">
-        
-              <div class="tile">
-                <div class="tile__media">
-                  <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
-                </div>
-                <div class="tile__details">
-                  <div class="tile__title">
-                    Top Gear
-                  </div>
-                </div>
-              </div>
-        
-              <div class="tile">
-                <div class="tile__media">
-                  <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg" alt=""  />
-                </div>
-                <div class="tile__details">
-                  <div class="tile__title">
-                    Top Gear
-                  </div>
-                </div>
-              </div>
-
-              <div class="tile">
-                  <div class="tile__media">
-                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
-                  </div>
-                  <div class="tile__details">
-                    <div class="tile__title">
-                      Top Gear
-                    </div>
-                  </div>
-                </div>
-        
-                <div class="tile">
-                    <div class="tile__media">
-                      <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
-                    </div>
-                    <div class="tile__details">
-                      <div class="tile__title">
-                        Top Gear
-                      </div>
-                    </div>
-                  </div>
-</body>
+    //add a realtime listener
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if(firebaseUser){
+          //console.log(firebaseUser);
+          console.log('logado');
+          logado="true";
+          btnLogout.classList.remove('hide');
+      }else{
+          console.log('não logado');
+          logado="false";
+          btnLogout.classList.add('hide');
+      }
+      if (logado=="true"){
+            console.log('abrir');
+          window.open('home.html');
+    }});
+</script>
 </html>

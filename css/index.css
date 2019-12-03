@@ -94,7 +94,7 @@ margin-top: 45px;
 transform: translateX(-50%);
    white-space: nowrap 
   }
-  input:not([type="checkbox"]){
+  input{
     margin: 0 auto;
     display: grid;
     left: 50%;

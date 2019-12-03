@@ -44,33 +44,39 @@ cursor: pointer;
 
 .container-video{
   position: relative;
-  width: 60%;
+ width: 68%;
   border-radius: 15px;
 left: 50%;
 transform: translateX(-50%);
-max-height: 100%;
-margin-top: 50%;
+max-height: 10%;
+top: 100px;
 white-space: nowrap;
 display: inline-block;
-
 overflow: scroll;
 overflow-block: #ccc;
 transition: 450ms -webkit-transform;
     transition: 450ms transform;
     transition: 450ms transform, 450ms -webkit-transform;
-    margin-top: 150px;
+    margin-top: 0;
     overflow-y:hidden;
-    
+    margin: 0 0 0 0px;
+    border-radius: 15px;
+ 
 }
-.container-video img{
+.container-video video{
      z-index: -10;
-     max-height: 100%;
+     height: 70vh;
+     justify-content: center;
+     width: 100vw;
      max-width: 100%;
      border-radius: 15px;
      display: inline-block;
      margin-left: 50%;
      left: 50%;
 transform: translateX(-50%);
+margin-top: -40px;
+object-fit: cover;
+
   }
 
 .garageplay{

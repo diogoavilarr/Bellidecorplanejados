@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Music</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdn.plyr.io/3.5.6/plyr.css'><link rel="stylesheet" href="css/cassete.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<header>
+        <a href="play.html"><img id="circulo" src="img/play.png" alt=""></a>
+       <header class="menu">
+    
+        <div>
+            <a href="home.html">
+            <img src="img/home2.png" alt="">
+            </a>
+        </div>
+    
+        <div>
+            <a href="eventos.html"><img src="img/event (1).png" alt=""></a>
+        </div>
+    
+        <div >
+            
+        </div>
+    
+        <div>
+            <a href="cassete.html"><img src="img/music-player.png" alt="">
+            </a>
+        </div>
+    
+        <div>
+            <img src="img/logo2.png" alt="">
+        </div>
+    
+    </header>
+<body>
+<!-- partial:index.partial.html -->
+<div class="garageplay">
+            <img src="img/garagemusic.png" alt="" width="140px">
+ </div> 
+<div class="container">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <div id="nowPlay">
+                <span id="npAction">Paused...</span><span id="npTitle"></span>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
+                </div>
+                <div id="tracks">
+                    <a id="btnPrev">&vltri;</a><a id="btnNext">&vrtri;</a>
+                </div>
+            </div>
+            <div id="plwrap">
+                <ul id="plList"></ul>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html5media/1.1.8/html5media.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.min.js'></script><script  src="js/script.js"></script>
+
+</body>
+</html>
